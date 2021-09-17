@@ -6,5 +6,11 @@ return [
     'settings' => 'Settings',
     'logout' => 'Sign out',
     'clients' => 'Customers',
-    'suppliers' => 'Suppliers'
+    'suppliers' => 'Suppliers',
+    'i-got' => 'I got',
+    'i-gave' => 'I gave',
+    'egp' => 'EGP',
+    'debt-collection' => 'Debt Collection',
+    'export-invoice' => 'Export Invoice',
+    'search' => 'Search'
 ];

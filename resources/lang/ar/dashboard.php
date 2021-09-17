@@ -6,5 +6,11 @@ return [
     'settings' => 'الاعدادات',
     'logout' => 'تسجيل الخروج',
     'clients' => 'العملاء',
-    'suppliers' => 'الموردين'
+    'suppliers' => 'الموردين',
+    'i-got' => 'اخذت',
+    'i-gave' => 'اعطيت',
+    'egp' => 'ج.م',
+    'debt-collection' => 'تحصيل الديون',
+    'export-invoice' => 'اصدار تقرير',
+    'search' => 'البحث'
 ];

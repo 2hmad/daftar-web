@@ -96,15 +96,14 @@ nav .navbar-nav {
       height: 5px;
       width: 100px; }
 
-body {
-  background: #f5f5f5; }
-
-nav .container-fluid {
-  justify-content: center !important; }
+nav {
+  margin-bottom: 3%; }
+  nav .container-fluid {
+    justify-content: center !important; }
 
 footer {
   background: white;
-  position: fixed;
+  position: sticky;
   width: 100%;
   bottom: 0;
   box-shadow: -4px 3px 14px 1px #e4e4e4; }
@@ -128,5 +127,107 @@ footer {
       margin-bottom: 10%; }
       footer ul li div i {
         font-size: 27px; }
+
+.got-gave {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 700px;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto; }
+  .got-gave div {
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px; }
+    .got-gave div span {
+      font-size: 19px;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: #2865ea; }
+
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%; }
+  .buttons-group button {
+    border: 1px solid #2865ea;
+    padding: 8px;
+    width: 200px;
+    background: transparent;
+    outline: none;
+    font-weight: bold;
+    color: #2865ea; }
+  .buttons-group button:hover {
+    background: #2865ea;
+    transition: 0.5s;
+    color: white; }
+  .buttons-group .debt {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; }
+  .buttons-group .export {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px; }
+
+.table-container {
+  padding: 20px;
+  overflow-y: auto;
+  height: 500px; }
+  .table-container form {
+    width: 100%; }
+    .table-container form input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #CCC;
+      border-radius: 5px;
+      outline: none; }
+  .table-container .export-pdf {
+    font-size: 30px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    outline: none; }
+    .table-container .export-pdf i {
+      color: #2e65ea; }
+  .table-container .group-search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin-right: auto;
+    margin-left: auto; }
+  .table-container a {
+    text-decoration: none; }
+  .table-container .content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid #1a202c45;
+    max-width: 1400px;
+    padding: 10px 10px 2%;
+    margin: 1% auto 2%; }
+    .table-container .content .info {
+      color: #1a202c; }
+    .table-container .content .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #1a202c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px; }
+
+.table-container::-webkit-scrollbar {
+  width: 0.5em; }
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #2865ea; }
 
 /*# sourceMappingURL=main.css.map */
