@@ -9,4 +9,7 @@ class DashboardController extends Controller
     public function index() {
         return view('dashboard');
     }
+    public function suppliers() {
+        return view('suppliers');
+    }
 }

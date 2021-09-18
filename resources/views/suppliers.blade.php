@@ -6,7 +6,6 @@
 <body>
 @include('dashboard-layouts.navbar')
 <div class="loading"></div>
-
 <div class="got-gave" style="direction: rtl">
     <div>
         <span>{{ __('dashboard.i-got') }}</span>
@@ -19,8 +18,7 @@
     </div>
 </div>
 <div class="buttons-group">
-    <button class="debt">{{ __('dashboard.debt-collection') }}</button>
-    <button class="export">{{ __('dashboard.export-invoice') }}</button>
+    <button class="export" style="border-radius: 50px;width: 300px;max-width: 100%;">{{ __('dashboard.export-invoice') }}</button>
 </div>
 
 <div class="table-container" @if(LaravelLocalization::getCurrentLocale() == "en") dir="ltr" @else dir="rtl" @endif>
@@ -44,6 +42,7 @@
         </div>
     </a>
 </div>
+<button class="add-item"><i class="fal fa-plus"></i></button>
 
 @include('dashboard-layouts.footer')
 </body>

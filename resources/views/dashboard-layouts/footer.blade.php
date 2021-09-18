@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-dashboard">
         <ul>
-            <a href="#" class="current">
+            <a href="/dashboard" @if(Request::path() === "en/dashboard" || Request::path() === "ar/dashboard") class="current" @endif>
                 <li>
                     <div>
                         @if(Request::path() === "en/dashboard" || Request::path() === "ar/dashboard")
@@ -13,10 +13,10 @@
                     </div>
                 </li>
             </a>
-            <a href="#">
+            <a href="/suppliers" @if(Request::path() === "en/suppliers" || Request::path() === "ar/suppliers") class="current" @endif>
                 <li>
                     <div>
-                        @if(Request::path() === "en/dashboard/suppliers" || Request::path() === "ar/dashboard/suppliers")
+                        @if(Request::path() === "en/suppliers" || Request::path() === "ar/suppliers")
                             <i class="fas fa-parachute-box"></i>
                         @else
                             <i class="fal fa-parachute-box"></i>

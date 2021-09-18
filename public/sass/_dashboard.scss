@@ -46,8 +46,7 @@ footer {
 }
 
 .got-gave {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
     max-width: 700px;
     justify-items: center;
     margin-left: auto;
@@ -181,4 +180,28 @@ footer {
 .table-container::-webkit-scrollbar-thumb {
     background-color: $primary;
 }
-
+.add-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary;
+    color: white;
+    border: none;
+    position: fixed;
+    bottom: 85px;
+    left: 30px;
+}
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    display: none;
+    background-color: #05f;
+}

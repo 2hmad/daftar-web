@@ -22,4 +22,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     Route::get('/login', [LoginController::class, 'login']);
     Route::get('/register', [LoginController::class, 'register']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/suppliers', [DashboardController::class, 'suppliers']);
 });
