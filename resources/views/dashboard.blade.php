@@ -31,7 +31,7 @@
     </div>
     <a href="#">
         <div class="content">
-            <div class="circle">أ</div>
+            <div class="circle">ا</div>
             <div class="info" style="display: flex;flex-direction: column;gap: 5px;">
                 <span style="font-weight: bold;">احمد محمد ابراهيم</span>
                 <span>16-09-2021</span>
