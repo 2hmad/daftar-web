@@ -1,7 +1,8 @@
 <footer>
     <div class="footer-dashboard">
         <ul>
-            <a href="/dashboard" @if(Request::path() === "en/dashboard" || Request::path() === "ar/dashboard") class="current" @endif>
+            <a href="/dashboard"
+               @if(Request::path() === "en/dashboard" || Request::path() === "ar/dashboard") class="current" @endif>
                 <li>
                     <div>
                         @if(Request::path() === "en/dashboard" || Request::path() === "ar/dashboard")
@@ -13,7 +14,8 @@
                     </div>
                 </li>
             </a>
-            <a href="/suppliers" @if(Request::path() === "en/suppliers" || Request::path() === "ar/suppliers") class="current" @endif>
+            <a href="/suppliers"
+               @if(Request::path() === "en/suppliers" || Request::path() === "ar/suppliers") class="current" @endif>
                 <li>
                     <div>
                         @if(Request::path() === "en/suppliers" || Request::path() === "ar/suppliers")
@@ -25,10 +27,15 @@
                     </div>
                 </li>
             </a>
-            <a href="#">
+            <a href="/settings"
+               @if(Request::path() === "en/settings" || Request::path() === "ar/settings") class="current" @endif>
                 <li>
                     <div>
-                        <i class="fal fa-cog"></i>
+                        @if(Request::path() === "en/settings" || Request::path() === "ar/settings")
+                            <i class="fas fa-cog"></i>
+                        @else
+                            <i class="fal fa-cog"></i>
+                        @endif
                         <label>{{ __('dashboard.settings') }}</label>
                     </div>
                 </li>

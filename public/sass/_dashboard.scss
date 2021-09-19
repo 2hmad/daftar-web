@@ -107,6 +107,7 @@ footer {
     padding: 20px;
     overflow-y: auto;
     height: 500px;
+    min-height: 100vh;
 
     form {
         width: 100%;
@@ -180,6 +181,7 @@ footer {
 .table-container::-webkit-scrollbar-thumb {
     background-color: $primary;
 }
+
 .add-item {
     width: 50px;
     height: 50px;
@@ -192,10 +194,12 @@ footer {
     background-color: $primary;
     color: white;
     border: none;
-    position: fixed;
+    position: sticky;
     bottom: 85px;
     left: 30px;
+    outline: none;
 }
+
 .loading {
     position: fixed;
     top: 0;
@@ -204,4 +208,27 @@ footer {
     height: 4px;
     display: none;
     background-color: #05f;
+}
+
+.settings {
+    min-height: 100vh;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    a {
+        color: $primary;
+        text-decoration: none;
+        padding: 10px;
+        border-bottom: 1px solid #0c0c0c14;
+        padding-bottom: 30px;
+    }
+    .option {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

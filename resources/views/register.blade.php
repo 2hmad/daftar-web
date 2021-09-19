@@ -24,15 +24,16 @@
                             <div class="completed"></div>
                         </a>
                     </div>
-                    <form method="post" role="form">
+                    <form method="POST" action="{{ route('register') }}" role="form">
+                        @csrf
                         <div class="form-group has-feedback has-feedback-left" style="display: flex;gap: 20px;">
                             <div>
                                 <label class="control-label">{{ __('register.first-name') }}</label>
-                                <input type="text" name="first-name" class="form-control">
+                                <input type="text" name="first_name" class="form-control">
                             </div>
                             <div>
                                 <label class="control-label">{{ __('register.last-name') }}</label>
-                                <input type="text" name="last-name" class="form-control">
+                                <input type="text" name="last_name" class="form-control">
                             </div>
                         </div>
                         <div class="form-group has-feedback has-feedback-left">
@@ -50,7 +51,7 @@
                             </div>
                             <div>
                                 <label>{{ __('register.confirm-password') }}</label>
-                                <input type="password" name="conf-password" class="form-control">
+                                <input type="password" name="confirm_password" class="form-control">
                             </div>
                         </div>
                         <div class="forget-remember">
@@ -65,6 +66,13 @@
                             <a href="login"><input type="button" name="login" value="{{ __('register.login') }}"></a>
                         </div>
                     </form>
+
+                    @if (Session::has("success"))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('messages.done-register') }}
+                        </div>
+                    @endif
+
                 </div>
         </div>
 

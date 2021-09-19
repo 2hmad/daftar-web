@@ -37,13 +37,15 @@
                 <span style="font-weight: bold;">احمد محمد ابراهيم</span>
                 <span>16-09-2021</span>
             </div>
-            <div style="display: flex;flex-direction: column;align-items: center;margin-right: auto;">
+            <div
+                style="display: flex;flex-direction: column;align-items: center;@if(LaravelLocalization::getCurrentLocale() == "en") margin-left @else margin-right @endif: auto;">
                 <span style="color: green;font-weight: bold;">500 {{ __('dashboard.egp') }}</span>
                 <span style="color: #1a202c">{{ __('dashboard.i-got') }}</span>
             </div>
         </div>
     </a>
 </div>
+<button class="add-item"><i class="fal fa-plus"></i></button>
 
 @include('dashboard-layouts.footer')
 </body>

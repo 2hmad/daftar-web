@@ -24,6 +24,7 @@
                         </a>
                     </div>
                     <form method="post" role="form">
+                        @csrf
                         <div class="form-group has-feedback has-feedback-left">
                             <label class="control-label">{{ __('login.email') }}</label>
                             <input type="email" name="email" class="form-control">

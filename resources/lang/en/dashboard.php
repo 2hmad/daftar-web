@@ -12,5 +12,10 @@ return [
     'egp' => 'EGP',
     'debt-collection' => 'Debt Collection',
     'export-invoice' => 'Export Invoice',
-    'search' => 'Search'
+    'search' => 'Search',
+    'my-information' => 'My Information',
+    'business-card' => 'Business card',
+    'add-users' => 'Add users',
+    'change-language' => 'Change language',
+    'logout' => 'Sign out'
 ];

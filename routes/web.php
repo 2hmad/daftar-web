@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterUsers;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -15,12 +16,16 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
     Route::get('/', function () {
         return view('index');
     });
     Route::get('/login', [LoginController::class, 'login']);
-    Route::get('/register', [LoginController::class, 'register']);
+    Route::get('/register', [RegisterUsers::class, 'index']);
+    Route::post('/register', [RegisterUsers::class, 'store'])->name('register');
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/suppliers', [DashboardController::class, 'suppliers']);
+    Route::get('/settings', function () {
+        return view('settings');
+    });
 });

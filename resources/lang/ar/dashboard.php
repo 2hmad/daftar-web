@@ -12,5 +12,10 @@ return [
     'egp' => 'ج.م',
     'debt-collection' => 'تحصيل الديون',
     'export-invoice' => 'اصدار تقرير',
-    'search' => 'البحث'
+    'search' => 'البحث',
+    'my-information' => 'معلوماتي الشخصية',
+    'business-card' => 'بطاقتي',
+    'add-users' => 'اضافة مستخدمين',
+    'change-language' => 'تغيير اللغة',
+    'logout' => 'تسجيل الخروج'
 ];

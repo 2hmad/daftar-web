@@ -292,6 +292,7 @@ footer ul li div i {
   padding: 20px;
   overflow-y: auto;
   height: 500px;
+  min-height: 100vh;
 }
 
 .table-container form {
@@ -398,9 +399,11 @@ footer ul li div i {
   background-color: #2865ea;
   color: white;
   border: none;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   bottom: 85px;
   left: 30px;
+  outline: none;
 }
 
 .loading {
@@ -411,5 +414,41 @@ footer ul li div i {
   height: 4px;
   display: none;
   background-color: #05f;
+}
+
+.settings {
+  min-height: 100vh;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+
+.settings a {
+  color: #2865ea;
+  text-decoration: none;
+  padding: 10px;
+  border-bottom: 1px solid #0c0c0c14;
+  padding-bottom: 30px;
+}
+
+.settings .option {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=main.css.map */
