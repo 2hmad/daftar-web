@@ -9,4 +9,6 @@ return [
     'phone-required' => 'Phone number required',
     'password-required' => 'Password required',
     'conf-pass-required' => 'Confirm password required',
+    'password-match' => 'Password does not match',
+    'password-short' => 'Password is too short'
 ];

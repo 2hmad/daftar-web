@@ -10,4 +10,6 @@ return [
     'phone-required' => 'رقم الهاتف مطلوب',
     'password-required' => 'كلمة المرور مطلوبة',
     'conf-pass-required' => 'حقل تأكيد كلمة المرور مطلوب',
+    'password-match' => 'كلمة المرور غير متطابقة',
+    'password-short' => 'كلمة المرور قصيرة'
 ];
