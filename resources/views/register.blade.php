@@ -28,29 +28,41 @@
                         @csrf
                         <div class="form-group has-feedback has-feedback-left" style="display: flex;gap: 20px;">
                             <div>
-                                <label class="control-label">{{ __('register.first-name') }}</label>
+                                <label class="control-label">{{ __('register.first-name') }} @error('first_name')
+                                    <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                                </label>
                                 <input type="text" name="first_name" class="form-control">
                             </div>
                             <div>
-                                <label class="control-label">{{ __('register.last-name') }}</label>
+                                <label class="control-label">{{ __('register.last-name') }} @error('last_name')
+                                    <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                                </label>
                                 <input type="text" name="last_name" class="form-control">
                             </div>
                         </div>
                         <div class="form-group has-feedback has-feedback-left">
-                            <label class="control-label">{{ __('register.email') }}</label>
+                            <label class="control-label">{{ __('register.email') }} @error('email')
+                                <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                            </label>
                             <input type="email" name="email" class="form-control">
                         </div>
                         <div class="form-group has-feedback has-feedback-left">
-                            <label class="control-label">{{ __('register.phone') }}</label>
+                            <label class="control-label">{{ __('register.phone') }} @error('phone')
+                                <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                            </label>
                             <input type="tel" name="phone" class="form-control">
                         </div>
                         <div class="form-group has-feedback has-feedback-left" style="display: flex;gap: 20px;">
                             <div>
-                                <label>{{ __('register.password') }}</label>
+                                <label>{{ __('register.password') }} @error('password')
+                                    <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                                </label>
                                 <input type="password" name="password" class="form-control">
                             </div>
                             <div>
-                                <label>{{ __('register.confirm-password') }}</label>
+                                <label>{{ __('register.confirm-password') }} @error('confirm_password')
+                                    <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                                </label>
                                 <input type="password" name="confirm_password" class="form-control">
                             </div>
                         </div>
@@ -70,6 +82,11 @@
                     @if (Session::has("success"))
                         <div class="alert alert-success" role="alert">
                             {{ __('messages.done-register') }}
+                        </div>
+                    @endif
+                    @if (Session::has("error-email"))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('messages.email-exist') }}
                         </div>
                     @endif
 

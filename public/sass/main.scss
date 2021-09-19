@@ -9,6 +9,7 @@ body {
     font-family: 'Almarai', sans-serif;
     min-height: 100vh;
 }
+
 nav {
     .nav-login {
         width: 150px;
@@ -19,10 +20,12 @@ nav {
         border-radius: 5px;
         font-weight: bold;
     }
+
     .navbar-nav {
         align-items: center;
     }
 }
+
 .container-login {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -73,6 +76,7 @@ nav {
             margin-bottom: 5%;
             display: flex;
             gap: 10px;
+
             input[type="submit"] {
                 width: 170px;
                 padding: 10px;
@@ -131,4 +135,11 @@ nav {
         }
     }
 }
+
+.error-feedback {
+    color: red;
+    font-size: 11px;
+    font-weight: bold;
+}
+
 @import "dashboard";
