@@ -7,6 +7,10 @@
 @include('dashboard-layouts.navbar')
 <div class="loading"></div>
 
+@foreach($customers as $customer)
+    <span>{{ $customer->customer_name }}</span>
+@endforeach
+
 <div class="got-gave" style="direction: rtl">
     <div>
         <span>{{ __('dashboard.i-got') }}</span>

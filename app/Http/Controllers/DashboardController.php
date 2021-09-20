@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customers;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -13,8 +14,9 @@ class DashboardController extends Controller
         $data = array();
         if (Session::has('email')) {
             $data = Users::where('email', '=', Session::get('email'))->first();
+            $customers = Customers::where('user_email', '=', Session::get('email'))->first();
         }
-        return view('dashboard', compact('data'));
+        return view('dashboard', compact('data', 'customers'));
     }
 
     public function suppliers()

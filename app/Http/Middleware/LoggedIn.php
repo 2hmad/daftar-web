@@ -17,7 +17,7 @@ class LoggedIn
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Session::has('email') && (url('/login') == $request->url() || url('/register') == $request->url())) {
+        if (Session::has('email')) {
             return redirect('/dashboard');
         }
         return $next($request);
