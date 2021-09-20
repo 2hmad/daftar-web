@@ -7,9 +7,6 @@
 @include('dashboard-layouts.navbar')
 <div class="loading"></div>
 
-@foreach($customers as $customer)
-    <span>{{ $customer->customer_name }}</span>
-@endforeach
 
 <div class="got-gave" style="direction: rtl">
     <div>
@@ -34,20 +31,23 @@
         </form>
         <button class="export-pdf"><i class="far fa-file-pdf"></i></button>
     </div>
-    <a href="#">
-        <div class="content">
-            <div class="circle">ا</div>
-            <div class="info" style="display: flex;flex-direction: column;gap: 5px;">
-                <span style="font-weight: bold;">احمد محمد ابراهيم</span>
-                <span>16-09-2021</span>
+    @foreach($customers as $customer)
+        <a href="#">
+            <div class="content">
+                <div class="circle"
+                     style="text-transform: uppercase">{{ mb_substr($customer->customer_name, 0, 1, 'utf-8') }}</div>
+                <div class="info" style="display: flex;flex-direction: column;gap: 5px;">
+                    <span style="font-weight: bold;">{{ $customer->customer_name }}</span>
+                    <span>{{ $customer->created_at }}</span>
+                </div>
+                <div
+                    style="display: flex;flex-direction: column;align-items: center;@if(LaravelLocalization::getCurrentLocale() == "en") margin-left @else margin-right @endif: auto;">
+                    <span style="color: green;font-weight: bold;">500 {{ __('dashboard.egp') }}</span>
+                    <span style="color: #1a202c">{{ __('dashboard.i-got') }}</span>
+                </div>
             </div>
-            <div
-                style="display: flex;flex-direction: column;align-items: center;@if(LaravelLocalization::getCurrentLocale() == "en") margin-left @else margin-right @endif: auto;">
-                <span style="color: green;font-weight: bold;">500 {{ __('dashboard.egp') }}</span>
-                <span style="color: #1a202c">{{ __('dashboard.i-got') }}</span>
-            </div>
-        </div>
-    </a>
+        </a>
+    @endforeach
 </div>
 <button class="add-item"><i class="fal fa-plus"></i></button>
 

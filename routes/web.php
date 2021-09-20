@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoginUsers;
 use App\Http\Controllers\RegisterUsers;
+use App\Http\Controllers\SuppliersController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -31,7 +32,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Route::group(['middleware' => 'checkAuth'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index']);
-        Route::get('/suppliers', [DashboardController::class, 'suppliers']);
+        Route::get('/suppliers', [SuppliersController::class, 'index']);
         Route::get('/settings', function () {
             return view('settings');
         });

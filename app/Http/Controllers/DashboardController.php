@@ -14,17 +14,8 @@ class DashboardController extends Controller
         $data = array();
         if (Session::has('email')) {
             $data = Users::where('email', '=', Session::get('email'))->first();
-            $customers = Customers::where('user_email', '=', Session::get('email'))->first();
+            $customers = Customers::where('user_email', '=', Session::get('email'))->get();
         }
         return view('dashboard', compact('data', 'customers'));
-    }
-
-    public function suppliers()
-    {
-        $data = array();
-        if (Session::has('email')) {
-            $data = Users::where('email', '=', Session::get('email'))->first();
-        }
-        return view('suppliers', compact('data'));
     }
 }
