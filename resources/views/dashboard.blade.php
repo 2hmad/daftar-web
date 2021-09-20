@@ -40,11 +40,6 @@
                     <span style="font-weight: bold;">{{ $customer->customer_name }}</span>
                     <span>{{ $customer->created_at }}</span>
                 </div>
-                <div
-                    style="display: flex;flex-direction: column;align-items: center;@if(LaravelLocalization::getCurrentLocale() == "en") margin-left @else margin-right @endif: auto;">
-                    <span style="color: green;font-weight: bold;">500 {{ __('dashboard.egp') }}</span>
-                    <span style="color: #1a202c">{{ __('dashboard.i-got') }}</span>
-                </div>
             </div>
         </a>
     @endforeach

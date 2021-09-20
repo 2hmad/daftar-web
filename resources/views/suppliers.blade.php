@@ -9,7 +9,9 @@
 <div class="got-gave" style="direction: rtl">
     <div>
         <span>{{ __('dashboard.i-got') }}</span>
-        <span style="color: green" @if(LaravelLocalization::getCurrentLocale() == "en") dir="ltr" @else dir="rtl" @endif>5000 {{ __('dashboard.egp') }}</span>
+        <span style="color: green" @if(LaravelLocalization::getCurrentLocale() == "en") dir="ltr" @else dir="rtl" @endif>
+                {{ $got }}
+            {{ __('dashboard.egp') }}</span>
     </div>
     <div>
         <span>{{ __('dashboard.i-gave') }}</span>
@@ -37,11 +39,6 @@
                 <div class="info" style="display: flex;flex-direction: column;gap: 5px;">
                     <span style="font-weight: bold;">{{ $supplier->supplier_name }}</span>
                     <span>{{ $supplier->created_at }}</span>
-                </div>
-                <div
-                    style="display: flex;flex-direction: column;align-items: center;@if(LaravelLocalization::getCurrentLocale() == "en") margin-left @else margin-right @endif: auto;">
-                    <span style="color: green;font-weight: bold;">500 {{ __('dashboard.egp') }}</span>
-                    <span style="color: #1a202c">{{ __('dashboard.i-got') }}</span>
                 </div>
             </div>
         </a>
