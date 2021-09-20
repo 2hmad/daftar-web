@@ -18,7 +18,8 @@
     </div>
 </div>
 <div class="buttons-group">
-    <button class="export" style="border-radius: 50px;width: 300px;max-width: 100%;">{{ __('dashboard.export-invoice') }}</button>
+    <button class="export"
+            style="border-radius: 50px;width: 300px;max-width: 100%;">{{ __('dashboard.export-invoice') }}</button>
 </div>
 
 <div class="table-container" @if(LaravelLocalization::getCurrentLocale() == "en") dir="ltr" @else dir="rtl" @endif>

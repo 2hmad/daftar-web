@@ -84,11 +84,6 @@
                             {{ __('messages.done-register') }}
                         </div>
                     @endif
-                    @if (Session::has("error-email"))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('messages.email-exist') }}
-                        </div>
-                    @endif
 
                 </div>
         </div>

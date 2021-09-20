@@ -11,5 +11,8 @@ return [
     'password-required' => 'كلمة المرور مطلوبة',
     'conf-pass-required' => 'حقل تأكيد كلمة المرور مطلوب',
     'password-match' => 'كلمة المرور غير متطابقة',
-    'password-short' => 'كلمة المرور قصيرة'
+    'password-short' => 'كلمة المرور قصيرة',
+    'user-not-found' => 'هذا المستخدم غير مسجل من قبل',
+    'email-incorrect' => 'البريد الالكتروني خاطئ',
+    'password-incorrect' => 'كلمة المرور خاطئة',
 ];

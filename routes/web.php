@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginUsers;
 use App\Http\Controllers\RegisterUsers;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -20,9 +21,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/', function () {
         return view('index');
     });
-    Route::get('/login', [LoginController::class, 'login']);
+    Route::get('/login', [LoginUsers::class, 'index']);
+    Route::post('/login', [LoginUsers::class, 'login'])->name('login');
+
     Route::get('/register', [RegisterUsers::class, 'index']);
     Route::post('/register', [RegisterUsers::class, 'store'])->name('register');
+
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/suppliers', [DashboardController::class, 'suppliers']);
     Route::get('/settings', function () {

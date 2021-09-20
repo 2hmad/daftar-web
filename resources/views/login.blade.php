@@ -23,14 +23,21 @@
                             <div class="incompleted"></div>
                         </a>
                     </div>
-                    <form method="post" role="form">
+                    <form method="post" action="{{ route('login') }}" role="form">
                         @csrf
                         <div class="form-group has-feedback has-feedback-left">
-                            <label class="control-label">{{ __('login.email') }}</label>
+                            <label class="control-label">{{ __('login.email') }} @if(Session::has('fail-email'))
+                                    <span class="error-feedback"
+                                          style="font-size: 13px">( {{ Session::get('fail-email') }} )</span>
+                                @endif
+                            </label>
                             <input type="email" name="email" class="form-control">
                         </div>
                         <div class="form-group has-feedback has-feedback-left">
-                            <label>{{ __('login.password') }}</label>
+                            <label>{{ __('login.password') }} @if(Session::has('fail-password'))
+                                    <span class="error-feedback"
+                                          style="font-size: 13px">( {{ Session::get('fail-password') }} )</span>
+                                @endif</label>
                             <input type="password" name="password" class="form-control">
                         </div>
                         <div class="forget-remember">
