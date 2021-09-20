@@ -181,7 +181,10 @@ footer {
   padding: 20px;
   overflow-y: auto;
   height: 500px;
-  min-height: 100vh; }
+  min-height: 100vh;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
   .table-container form {
     width: 100%; }
     .table-container form input {

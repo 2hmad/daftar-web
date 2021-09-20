@@ -21,8 +21,13 @@ class SuppliersController extends Controller
                 ->where('type', '=', 'got')
                 ->get()
                 ->sum('amount');
+            $gave = DB::table('suppliers_data')
+                ->where('user_email', '=', Session::get('email'))
+                ->where('type', '=', 'gave')
+                ->get()
+                ->sum('amount');
         }
-        return view('suppliers', compact('data', 'suppliers', 'got'));
+        return view('suppliers', compact('data', 'suppliers', 'got', 'gave'));
     }
 
     public function store(AddSupplierRequest $request)

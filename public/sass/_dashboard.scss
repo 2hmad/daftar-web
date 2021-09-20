@@ -108,6 +108,9 @@ footer {
     overflow-y: auto;
     height: 500px;
     min-height: 100vh;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 
     form {
         width: 100%;
@@ -218,6 +221,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 25px;
+
     a {
         color: $primary;
         text-decoration: none;
@@ -225,6 +229,7 @@ footer {
         border-bottom: 1px solid #0c0c0c14;
         padding-bottom: 30px;
     }
+
     .option {
         font-size: 20px;
         display: flex;

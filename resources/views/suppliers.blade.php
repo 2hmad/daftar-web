@@ -16,7 +16,7 @@
     <div>
         <span>{{ __('dashboard.i-gave') }}</span>
         <span style="color: red" @if(LaravelLocalization::getCurrentLocale() == "en") dir="ltr"
-              @else dir="rtl" @endif>0 {{ __('dashboard.egp') }}</span>
+              @else dir="rtl" @endif>{{ $gave }} {{ __('dashboard.egp') }}</span>
     </div>
 </div>
 <div class="buttons-group">
