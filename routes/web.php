@@ -21,15 +21,20 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/', function () {
         return view('index');
     });
-    Route::get('/login', [LoginUsers::class, 'index']);
-    Route::post('/login', [LoginUsers::class, 'login'])->name('login');
 
-    Route::get('/register', [RegisterUsers::class, 'index']);
-    Route::post('/register', [RegisterUsers::class, 'store'])->name('register');
-
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/suppliers', [DashboardController::class, 'suppliers']);
-    Route::get('/settings', function () {
-        return view('settings');
+    Route::group(['middleware' => 'loggedIn'], function () {
+        Route::get('/login', [LoginUsers::class, 'index']);
+        Route::post('/login', [LoginUsers::class, 'login'])->name('login');
+        Route::get('/register', [RegisterUsers::class, 'index']);
+        Route::post('/register', [RegisterUsers::class, 'store'])->name('register');
     });
+
+    Route::group(['middleware' => 'checkAuth'], function () {
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/suppliers', [DashboardController::class, 'suppliers']);
+        Route::get('/settings', function () {
+            return view('settings');
+        });
+    });
+
 });
