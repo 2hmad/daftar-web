@@ -17,5 +17,13 @@ return [
     'business-card' => 'بطاقتي',
     'add-users' => 'اضافة مستخدمين',
     'change-language' => 'تغيير اللغة',
-    'logout' => 'تسجيل الخروج'
+    'logout' => 'تسجيل الخروج',
+    'add-customer' => 'اضافة عميل',
+    'customer-name' => 'الاسم',
+    'customer-phone' => 'رقم الموبايل',
+    'add-supplier' => 'اضافة مورد',
+    'supplier-name' => 'الاسم',
+    'supplier-phone' => 'رقم الموبايل',
+    'close' => 'اغلاق',
+    'insert' => 'اضافة'
 ];

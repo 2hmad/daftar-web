@@ -2,6 +2,7 @@
 
 return [
     'done-register' => 'Users has been successfully registered',
+    'name-required' => 'Name required',
     'first-name-required' => 'First name required',
     'last-name-required' => 'Last name required',
     'email-required' => 'Email address required',

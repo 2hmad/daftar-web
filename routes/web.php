@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoginUsers;
@@ -31,8 +32,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     });
 
     Route::group(['middleware' => 'checkAuth'], function () {
-        Route::get('/dashboard', [DashboardController::class, 'index']);
-        Route::get('/suppliers', [SuppliersController::class, 'index']);
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::post('/dashboard', [CustomersController::class, 'store'])->name('store-customer');
+        Route::get('/suppliers', [SuppliersController::class, 'index'])->name('suppliers');
+        Route::post('/suppliers', [SuppliersController::class, 'store'])->name('store-supplier');
         Route::get('/settings', function () {
             return view('settings');
         });

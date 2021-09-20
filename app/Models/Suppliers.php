@@ -14,7 +14,7 @@ class Suppliers extends Model
         'id',
         'user_email',
         'supplier_name',
-        'customer_phone',
+        'supplier_phone',
         'created_at'
     ];
     protected $hidden = [];

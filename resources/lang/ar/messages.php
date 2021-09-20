@@ -2,6 +2,7 @@
 
 return [
     'done-register' => 'تم تسجيل العضو بنجاح',
+    'name-required' => 'الاسم مطلوب',
     'email-exist' => 'هذا البريد الالكتروني مسجل من قبل',
     'first-name-required' => 'الاسم الاول مطلوب',
     'last-name-required' => 'الاسم الاخير مطلوب',
