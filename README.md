@@ -6,3 +6,9 @@ suppliers, expenses and revenues completely free with some other features
 - Free and Open Source
 - Important features
 - Multi language website
+
+## Technologies
+
+- Html & Css
+- JavaScript
+- Laravel Framework
