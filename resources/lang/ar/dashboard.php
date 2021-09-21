@@ -25,5 +25,8 @@ return [
     'supplier-name' => 'الاسم',
     'supplier-phone' => 'رقم الموبايل',
     'close' => 'اغلاق',
-    'insert' => 'اضافة'
+    'insert' => 'اضافة',
+    'amount' => 'المبلغ',
+    'add-details' => 'تفاصيل ( البضاعة ، الكمية ، رقم الفاتورة )',
+    'upload-image' => 'ارفع صورة'
 ];

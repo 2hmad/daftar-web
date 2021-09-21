@@ -1,0 +1,90 @@
+.got-gave-profile {
+    display: flex;
+    max-width: 1000px;
+    justify-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+
+.got-gave-profile div {
+    padding: 15px;
+    width: 400px;
+    text-align: inherit;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.phone, .message, .export-pdf {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    background: #a7daff;
+    color: #0093ff;
+    border: none;
+    outline: none;
+}
+
+.buttons-group-customer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 15px;
+
+    .add-got {
+        border-radius: 3px;
+        border: 1px solid rgba(0, 128, 0, 34%);
+        padding: 8px;
+        width: 200px;
+        background: rgba(0, 128, 0, 34%);
+        outline: none;
+        font-weight: bold;
+        color: green;
+    }
+
+    .add-gave {
+        border-radius: 3px;
+        border: 1px solid rgba(255, 0, 0, 34%);
+        padding: 8px;
+        width: 200px;
+        background: rgba(255, 0, 0, 34%);
+        outline: none;
+        font-weight: bold;
+        color: red;
+    }
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.input-euro {
+    position: relative;
+
+}
+
+.input-euro.left input {
+    padding-left: 18px;
+}
+
+.input-euro.left:before {
+    left: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

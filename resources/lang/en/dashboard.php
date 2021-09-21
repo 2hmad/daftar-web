@@ -25,5 +25,8 @@ return [
     'customer-supplier' => 'Name',
     'customer-supplier' => 'Phone',
     'close' => 'Close',
-    'insert' => 'Add'
+    'insert' => 'Add',
+    'amount' => 'Amount',
+    'add-details' => 'Details ( Collection, quantity, invoice number )',
+    'upload-image' => 'Upload image'
 ];

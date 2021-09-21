@@ -32,7 +32,7 @@
         <button class="export-pdf"><i class="far fa-file-pdf"></i></button>
     </div>
     @foreach($customers as $customer)
-        <a href="#">
+        <a href="customer/{{ $customer->id }}">
             <div class="content">
                 <div class="circle"
                      style="text-transform: uppercase">{{ mb_substr($customer->customer_name, 0, 1, 'utf-8') }}</div>

@@ -34,8 +34,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::group(['middleware' => 'checkAuth'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/dashboard', [CustomersController::class, 'store'])->name('store-customer');
+        Route::get('/customer/{id}', [CustomersController::class, 'fetch']);
         Route::get('/suppliers', [SuppliersController::class, 'index'])->name('suppliers');
         Route::post('/suppliers', [SuppliersController::class, 'store'])->name('store-supplier');
+        Route::get('/supplier/{id}', [CustomersController::class, 'fetch']);
         Route::get('/settings', function () {
             return view('settings');
         });

@@ -119,9 +119,9 @@ footer {
     margin-bottom: 0; }
     footer ul a {
       text-decoration: none;
-      color: #5889f3; }
+      color: #2895FF; }
     footer ul .current {
-      color: #2865ea;
+      color: #006ad2;
       font-weight: bold; }
     footer ul li div {
       display: flex;
@@ -152,22 +152,22 @@ footer {
       font-size: 19px;
       font-weight: bold;
       text-transform: capitalize;
-      color: #2865ea; }
+      color: #006ad2; }
 
 .buttons-group {
   display: flex;
   justify-content: center;
   margin-top: 2%; }
   .buttons-group button {
-    border: 1px solid #2865ea;
+    border: 1px solid #006ad2;
     padding: 8px;
     width: 200px;
     background: transparent;
     outline: none;
     font-weight: bold;
-    color: #2865ea; }
+    color: #006ad2; }
   .buttons-group button:hover {
-    background: #2865ea;
+    background: #006ad2;
     transition: 0.5s;
     color: white; }
   .buttons-group .debt {
@@ -181,7 +181,6 @@ footer {
   padding: 20px;
   overflow-y: auto;
   height: 500px;
-  min-height: 100vh;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto; }
@@ -236,7 +235,7 @@ footer {
   width: 0.5em; }
 
 .table-container::-webkit-scrollbar-thumb {
-  background-color: #2865ea; }
+  background-color: #006ad2; }
 
 .add-item {
   width: 50px;
@@ -247,7 +246,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2865ea;
+  background-color: #006ad2;
   color: white;
   border: none;
   position: sticky;
@@ -273,7 +272,7 @@ footer {
   flex-direction: column;
   gap: 25px; }
   .settings a {
-    color: #2865ea;
+    color: #006ad2;
     text-decoration: none;
     padding: 10px;
     border-bottom: 1px solid #0c0c0c14;
@@ -283,5 +282,81 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between; }
+
+.got-gave-profile {
+  display: flex;
+  max-width: 1000px;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between; }
+
+.got-gave-profile div {
+  padding: 15px;
+  width: 400px;
+  text-align: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px; }
+
+.phone, .message, .export-pdf {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  background: #a7daff;
+  color: #0093ff;
+  border: none;
+  outline: none; }
+
+.buttons-group-customer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  gap: 15px; }
+  .buttons-group-customer .add-got {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 128, 0, 0.34);
+    padding: 8px;
+    width: 200px;
+    background: rgba(0, 128, 0, 0.34);
+    outline: none;
+    font-weight: bold;
+    color: green; }
+  .buttons-group-customer .add-gave {
+    border-radius: 3px;
+    border: 1px solid rgba(255, 0, 0, 0.34);
+    padding: 8px;
+    width: 200px;
+    background: rgba(255, 0, 0, 0.34);
+    outline: none;
+    font-weight: bold;
+    color: red; }
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px; }
+
+.input-euro {
+  position: relative; }
+
+.input-euro.left input {
+  padding-left: 18px; }
+
+.input-euro.left:before {
+  left: 5px; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
 
 /*# sourceMappingURL=main.css.map */

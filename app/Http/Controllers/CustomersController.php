@@ -22,4 +22,9 @@ class CustomersController extends Controller
 
         return redirect()->route('dashboard')->with('success', '');
     }
+
+    public function fetch($id)
+    {
+        return view('customer');
+    }
 }
