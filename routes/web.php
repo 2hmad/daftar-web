@@ -37,7 +37,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/customer/{id}', [CustomersController::class, 'fetch']);
         Route::get('/suppliers', [SuppliersController::class, 'index'])->name('suppliers');
         Route::post('/suppliers', [SuppliersController::class, 'store'])->name('store-supplier');
-        Route::get('/supplier/{id}', [CustomersController::class, 'fetch']);
+        Route::get('/supplier/{id}', [SuppliersController::class, 'fetch']);
         Route::get('/settings', function () {
             return view('settings');
         });

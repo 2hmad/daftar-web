@@ -43,4 +43,19 @@ class SuppliersController extends Controller
 
         return redirect()->route('suppliers')->with('success', '');
     }
+
+    public function fetch($id)
+    {
+        if (Session::has('email')) {
+            $gots = DB::table('suppliers_data')
+                ->where('user_email', '=', Session::get('email'))
+                ->where('supplier_id', '=', $id)
+                ->get();
+            $gaves = DB::table('suppliers_data')
+                ->where('user_email', '=', Session::get('email'))
+                ->where('type', '=', 'gave')
+                ->get();
+        }
+        return view('supplier', compact('gots', 'gaves'));
+    }
 }
