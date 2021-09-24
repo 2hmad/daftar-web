@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddCustomerDataController;
 use App\Http\Controllers\AddSupplierDataController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
@@ -7,7 +8,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoginUsers;
 use App\Http\Controllers\RegisterUsers;
 use App\Http\Controllers\SuppliersController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -38,6 +45,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
             Route::post('/dashboard', [CustomersController::class, 'store'])->name('store-customer');
             Route::get('/customer/{id}', [CustomersController::class, 'fetch']);
+            Route::post('/customer', [AddCustomerDataController::class, 'store_cus_data'])->name('store-customer-data');
         });
 
         Route::group(['name', 'suppliers'], function () {
@@ -47,9 +55,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::post('/supplier', [AddSupplierDataController::class, 'store_sup_data'])->name('store-supplier-data');
         });
 
+        Route::group(['name', 'settings'], function () {
+            Route::get('/my-info', [\App\Http\Controllers\MyInfoController::class, 'index']);
+        });
+
+        Route::get('/logout', function () {
+            Auth::logout();
+            Session::flush();
+            Cookie::queue(Cookie::forget('laravel_session'));
+            return Redirect::to('/login');
+        })->name('logout');
+
         Route::get('/settings', function () {
             return view('settings');
         });
-
     });
 });

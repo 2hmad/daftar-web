@@ -139,7 +139,10 @@
                         <i class="far fa-level-down-alt"></i>
                     @endif
                 </div>
-                <span style="font-weight: bold;">{{ $got -> name }}</span>
+                <div style="display: flex;flex-direction: column;">
+                    <span style="font-weight: bold;">{{ $got -> name }}</span>
+                    <span>{{ $got->date }}</span>
+                </div>
             </div>
             <div style="display: flex;flex-direction: column;align-items: center;">
                 <span

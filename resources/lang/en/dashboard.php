@@ -29,5 +29,6 @@ return [
     'amount' => 'Amount',
     'add-details' => 'Details ( Collection, quantity, invoice number )',
     'upload-image' => 'Upload image',
-    'title' => 'Title'
+    'title' => 'Title',
+    'save-changes' => 'Save changes'
 ];

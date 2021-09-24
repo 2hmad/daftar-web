@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddCustomerRequest;
 use App\Models\Customers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CustomersController extends Controller
@@ -25,6 +26,16 @@ class CustomersController extends Controller
 
     public function fetch($id)
     {
-        return view('customer');
+        if (Session::has('email')) {
+            $gots = DB::table('customers_data')
+                ->where('user_email', '=', Session::get('email'))
+                ->where('customer_id', '=', $id)
+                ->get();
+            $gaves = DB::table('customers_data')
+                ->where('user_email', '=', Session::get('email'))
+                ->where('type', '=', 'gave')
+                ->get();
+        }
+        return view('customer', compact('gots', 'gaves'));
     }
 }

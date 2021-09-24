@@ -41,7 +41,7 @@
                             <input type="password" name="password" class="form-control">
                         </div>
                         <div class="forget-remember">
-                            <div class="checkbox"><input type="checkbox" name="remember-me" id="remember"><label
+                            <div class="checkbox"><input type="checkbox" name="remember" id="remember"><label
                                     for="remember" style="user-select: none;">{{ __('login.remember_me') }}</label>
                             </div>
                             <a href="#" class="forget-password"><span>{{ __('login.forget-password') }}</span></a>
