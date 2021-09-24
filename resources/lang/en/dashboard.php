@@ -28,5 +28,6 @@ return [
     'insert' => 'Add',
     'amount' => 'Amount',
     'add-details' => 'Details ( Collection, quantity, invoice number )',
-    'upload-image' => 'Upload image'
+    'upload-image' => 'Upload image',
+    'title' => 'Title'
 ];

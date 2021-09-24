@@ -22,7 +22,8 @@
         <span
             style="font-size: 17px;font-weight: 500;text-transform: capitalize;color: #19202c;">{{ __('main.balances') }}</span>
         <span style="color: green;font-size: 22px;" @if(LaravelLocalization::getCurrentLocale() == "en") dir="ltr"
-              @else dir="rtl" @endif>{{ DB::table('suppliers_data')->where('user_email', '=', Session::get('email'))->where('supplier_id', '=', request()->route('id'))->sum('amount') - DB::table('suppliers_data')->where('user_email', '=', Session::get('email'))->where('supplier_id', '=', request()->route('id'))->where('type', '=', 'gave')->sum('amount') }}
+              @else dir="rtl" @endif>
+            {{ DB::table('suppliers_data')->where('user_email', '=', Session::get('email'))->where('supplier_id', '=', request()->route('id'))->where('type', '=', 'got')->sum('amount') - DB::table('suppliers_data')->where('user_email', '=', Session::get('email'))->where('supplier_id', '=', request()->route('id'))->where('type', '=', 'gave')->sum('amount') }}
             {{ __('dashboard.egp') }}</span>
     </div>
     <div style="display: flex;flex-direction: row;gap: 15px;">
@@ -43,15 +44,20 @@
          @else dir="rtl" @endif>
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="POST" action="{{ route('store-customer') }}">
+                <form method="POST" action="{{ route('store-supplier-data') }}" enctype="multipart/form-data">
                     <div class="modal-body" style="display: flex;flex-direction: column;gap: 15px;">
                         @csrf
                         <div>
-                            <span class="input-euro left">
-                            <input type="number" name="name" value="0.00" min="0.50" step='0.01' onwheel="this.blur()"
+                            <span class="input-euro left" style="color: red">
+                            <input type="number" name="amount" value="0.00" min="0.50" step='0.01' onwheel="this.blur()"
                                    style="max-width: 100%;padding: 5px;border: none;outline: none;color: green;font-weight: bold;font-size: 28px;text-align: center;">
                             </span>
                         </div>
+                        <input name="supplier_id" value="{{ request()->route('id') }}" hidden>
+                        <input name="type" value="got" hidden>
+                        <input type="text" name="name"
+                               style="padding: 5px;border: 1px solid #CCC;border-radius: 5px;outline: none"
+                               placeholder="{{ __('dashboard.title') }}">
                         <input type="date" name="date"
                                style="padding: 5px;border: 1px solid #CCC;border-radius: 5px;outline: none"
                                value="{{ date('Y-m-d') }}">
@@ -81,15 +87,20 @@
          @else dir="rtl" @endif>
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="POST" action="{{ route('store-customer') }}">
+                <form method="POST" action="{{ route('store-supplier-data') }}" enctype="multipart/form-data">
                     <div class="modal-body" style="display: flex;flex-direction: column;gap: 15px;">
                         @csrf
                         <div>
-                            <span class="input-euro left">
-                            <input type="number" name="name" value="0.00" min="0.50" step='0.01' onwheel="this.blur()"
+                            <span class="input-euro left" style="color: red">
+                            <input type="number" name="amount" value="0.00" min="0.50" step='0.01' onwheel="this.blur()"
                                    style="max-width: 100%;padding: 5px;border: none;outline: none;color: green;font-weight: bold;font-size: 28px;text-align: center;">
                             </span>
                         </div>
+                        <input name="supplier_id" value="{{ request()->route('id') }}" hidden>
+                        <input name="type" value="gave" hidden>
+                        <input type="text" name="name"
+                               style="padding: 5px;border: 1px solid #CCC;border-radius: 5px;outline: none"
+                               placeholder="{{ __('dashboard.title') }}">
                         <input type="date" name="date"
                                style="padding: 5px;border: 1px solid #CCC;border-radius: 5px;outline: none"
                                value="{{ date('Y-m-d') }}">

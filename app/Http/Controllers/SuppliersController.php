@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddSupplierRequest;
+use App\Models\AddSupplierData;
 use App\Models\Suppliers;
 use App\Models\Users;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -58,4 +60,5 @@ class SuppliersController extends Controller
         }
         return view('supplier', compact('gots', 'gaves'));
     }
+
 }

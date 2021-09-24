@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddSupplierDataController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
@@ -32,15 +33,23 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     });
 
     Route::group(['middleware' => 'checkAuth'], function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::post('/dashboard', [CustomersController::class, 'store'])->name('store-customer');
-        Route::get('/customer/{id}', [CustomersController::class, 'fetch']);
-        Route::get('/suppliers', [SuppliersController::class, 'index'])->name('suppliers');
-        Route::post('/suppliers', [SuppliersController::class, 'store'])->name('store-supplier');
-        Route::get('/supplier/{id}', [SuppliersController::class, 'fetch']);
+
+        Route::group(['name', 'customers'], function () {
+            Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+            Route::post('/dashboard', [CustomersController::class, 'store'])->name('store-customer');
+            Route::get('/customer/{id}', [CustomersController::class, 'fetch']);
+        });
+
+        Route::group(['name', 'suppliers'], function () {
+            Route::get('/suppliers', [SuppliersController::class, 'index'])->name('suppliers');
+            Route::post('/suppliers', [SuppliersController::class, 'store'])->name('store-supplier');
+            Route::get('/supplier/{id}', [SuppliersController::class, 'fetch']);
+            Route::post('/supplier', [AddSupplierDataController::class, 'store_sup_data'])->name('store-supplier-data');
+        });
+
         Route::get('/settings', function () {
             return view('settings');
         });
-    });
 
+    });
 });
