@@ -19,9 +19,11 @@ class MyInfoController extends Controller
         ->where('email', '=', Session::get('email'))
         ->limit(1)
         ->update(
-            array("first_name" => $request->input('first_name'),
-            "last_name" => $request->input('last_name'),
-            "phone" => $request->input('phone'))
+            array(
+                "first_name" => $request->input('first_name'),
+                "last_name" => $request->input('last_name'),
+                "phone" => $request->input('phone')
+            )
         );
         return redirect()->to('my-info')->with('success', '');
     }
