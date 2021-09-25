@@ -59,6 +59,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::group(['name', 'settings'], function () {
             Route::get('/my-info', [MyInfoController::class, 'index']);
             Route::post('/my-info', [MyInfoController::class, 'update'])->name('update.my-info');
+            Route::get('/add-users', [AddUsersController::class, 'index']);
+            Route::post('/add-users');
         });
 
         Route::get('/logout', function () {
