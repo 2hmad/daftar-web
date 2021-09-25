@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoginUsers;
+use App\Http\Controllers\MyInfoController;
 use App\Http\Controllers\RegisterUsers;
 use App\Http\Controllers\SuppliersController;
 use Illuminate\Support\Facades\App;
@@ -56,7 +57,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         });
 
         Route::group(['name', 'settings'], function () {
-            Route::get('/my-info', [\App\Http\Controllers\MyInfoController::class, 'index']);
+            Route::get('/my-info', [MyInfoController::class, 'index']);
+            Route::post('/my-info', [MyInfoController::class, 'update'])->name('update.my-info');
         });
 
         Route::get('/logout', function () {
