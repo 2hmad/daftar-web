@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: transparent !important;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" @if (LaravelLocalization::getCurrentLocale() == 'en') dir="ltr" @else dir="rtl" @endif style="background-color: transparent !important;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Daftar</a>
+        <a class="navbar-brand" href="/">Daftar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,9 @@
                 <li class="nav-item">
                     @if (Session::has('email'))
                         <a class="nav-link" href="dashboard">
-                            <button><img src="{{ asset('pics/user.png') }}"></button>
+                            <button style="border: none;background: transparent;outline:none" title="{{ __('main.dashboard') }}">
+                                <img src="{{ asset('pics/user.png') }}" style="width: 50px;height: 50px;border-radius: 50%;object-fit: contain;border: 1px solid #CCC;">
+                            </button>
                         </a>
                     @else
                         <a class="nav-link" href="login">
@@ -18,7 +20,7 @@
                         </a>
                     @endif
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="font-weight: bold;font-size: 17px;">
                     @if (LaravelLocalization::getCurrentLocale() == 'en')
                         <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL('ar') }}">العربية</a>
                     @else
