@@ -1,8 +1,14 @@
 <html>
+
 <head>
     <title>{{ __('main.title') }}</title>
+    @include('layouts.links')
 </head>
+
 <body>
-@extends('layouts.navbar')
+
+@include('layouts.navbar')
+
 </body>
+@include('layouts.scripts')
 </html>

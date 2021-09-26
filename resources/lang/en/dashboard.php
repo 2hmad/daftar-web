@@ -22,6 +22,8 @@ return [
     'customer-name' => 'Name',
     'customer-phone' => 'Phone',
     'add-supplier' => 'Add supplier',
+    'supplier-name' => 'Supplier name',
+    'supplier-phone' => 'Supplier phone',
     'customer-supplier' => 'Name',
     'customer-supplier' => 'Phone',
     'close' => 'Close',
