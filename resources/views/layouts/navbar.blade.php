@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" @if (LaravelLocalization::getCurrentLocale() == 'en') dir="ltr" @else dir="rtl" @endif style="background-color: transparent !important;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" @if (LaravelLocalization::getCurrentLocale() == 'en') dir="ltr" @else dir="rtl" @endif style="z-index:99;background-color: transparent !important;">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Daftar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

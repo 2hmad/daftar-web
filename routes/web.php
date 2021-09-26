@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginUsers;
 use App\Http\Controllers\MyInfoController;
 use App\Http\Controllers\RegisterUsers;
 use App\Http\Controllers\SuppliersController;
+use App\Http\Controllers\AddUsersController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -60,7 +61,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::get('/my-info', [MyInfoController::class, 'index']);
             Route::post('/my-info', [MyInfoController::class, 'update'])->name('update.my-info');
             Route::get('/add-users', [AddUsersController::class, 'index']);
-            Route::post('/add-users');
+            Route::post('/add-users', [AddUsersController::class, 'store'])->name('add-users');
         });
 
         Route::get('/logout', function () {

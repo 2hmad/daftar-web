@@ -30,7 +30,7 @@
             </div>
         </div>
     </a>
-    <a href="#">
+    <a href="{{ url('add-users') }}">
         <div class="option">
             <div style="display: flex;align-items: center;gap: 20px;">
                 <i class="far fa-user-plus"></i>

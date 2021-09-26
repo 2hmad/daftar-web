@@ -8,11 +8,6 @@
         integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .header {
-            padding: 15px;
-            display: flex;
-        }
-
         #heading-primary-main {
             line-height: 2em;
             font-size: 39px;
@@ -32,7 +27,7 @@
     @include('layouts.navbar')
 
     <section id="fullpage">
-        <div class="section">
+        <div class="section" style="padding: 15px;display: flex;">
             <div style="padding: 15px;max-width: 465px;">
                 <h1 id="heading-primary-main" class="animate__animated @if (LaravelLocalization::getCurrentLocale() == 'en') animate__fadeInLeft @else animate__fadeInRight @endif">
                     {{ __('main.daftar-desc') }}
@@ -53,31 +48,15 @@
             </div>
         </div>
         <div class="section">
-            <div style="padding: 15px;max-width: 465px;">
-                <h1 id="heading-primary-main" class="animate__animated @if (LaravelLocalization::getCurrentLocale() == 'en') animate__fadeInLeft @else animate__fadeInRight @endif">
-                    {{ __('main.daftar-desc') }} test test
-                </h1>
-                <p style="font-size: 20px;" class="animate__animated @if (LaravelLocalization::getCurrentLocale() == 'en') animate__fadeInLeft @else animate__fadeInRight @endif">
-                    {{ __('main.daftar-p') }}
-                </p>
-                <div style="display: flex;gap:20px" class="animate__animated @if (LaravelLocalization::getCurrentLocale() == 'en') animate__fadeInLeft @else animate__fadeInRight @endif">
-                    <a href="#" class="google-play">
-                        <img src="@if (LaravelLocalization::getCurrentLocale() == 'en') {{ asset('pics/google play.png') }} @else {{ asset('pics/جوجل بلاي.png') }} @endif" style="max-width: 185px;">
-                    </a>
-                    <a href="#" class="apple-store">
-                        <img src="@if (LaravelLocalization::getCurrentLocale() == 'en') {{ asset('pics/apple store.png') }} @else {{ asset('pics/ابل ستور.png') }} @endif" style="max-width: 185px;">
-                    </a>
-                </div>
-            </div>
-            <div>
-            </div>
-        </div>
 
+        </div>
     </section>
 
 </body>
 @include('layouts.scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js" integrity="sha512-pYyQWhzi2lV+RM4GmaUA56VPL48oLVvsHmP9tuQ8MaZMDHomVEDjXXnfSVKXayy+wLclKPte0KbsuVoFImtE7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/vendors/scrolloverflow.min.js"
+integrity="sha512-pYyQWhzi2lV+RM4GmaUA56VPL48oLVvsHmP9tuQ8MaZMDHomVEDjXXnfSVKXayy+wLclKPte0KbsuVoFImtE7w=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
 integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg=="
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
