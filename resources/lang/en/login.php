@@ -11,5 +11,6 @@ return [
     'forget-password' => 'Forget your password ?',
     'remember_me' => 'Remember Me',
     'first-name' => 'First name',
-    'last-name' => 'Last name'
+    'last-name' => 'Last name',
+    'reset' => 'Reset'
 ];

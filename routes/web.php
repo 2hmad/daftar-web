@@ -4,6 +4,7 @@ use App\Http\Controllers\AddCustomerDataController;
 use App\Http\Controllers\AddSupplierDataController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LoginUsers;
 use App\Http\Controllers\MyInfoController;
@@ -39,6 +40,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::post('/login', [LoginUsers::class, 'login'])->name('login');
         Route::get('/register', [RegisterUsers::class, 'index']);
         Route::post('/register', [RegisterUsers::class, 'store'])->name('register');
+        Route::get('/forget-password', [ForgetPasswordController::class, 'index']);
+        Route::post('/forget-password', [ForgetPasswordController::class, 'message'])->name('send-message-forget');
     });
 
     Route::group(['middleware' => 'checkAuth'], function () {

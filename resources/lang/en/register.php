@@ -14,5 +14,6 @@ return [
     'phone' => 'Phone number',
     'agree' => 'Registering a new account means that you agree to the',
     'terms' => 'Terms and Conditions',
-    'confirm-password' => 'Confirm password'
+    'confirm-password' => 'Confirm password',
+    'store-name' => 'Store name'
 ];

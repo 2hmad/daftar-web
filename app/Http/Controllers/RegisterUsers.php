@@ -20,6 +20,7 @@ class RegisterUsers extends Controller
         Users::create([
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
+            'store_name' => $request->input('store_name'),
             'email' => $request->input('email'),
             'phone' => $request->input('phone'),
             'password' => Hash::make($request->input('password')),

@@ -41,6 +41,12 @@
                             </div>
                         </div>
                         <div class="form-group has-feedback has-feedback-left">
+                            <label class="control-label">{{ __('register.store-name') }} @error('store_name')
+                                <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
+                            </label>
+                            <input type="text" name="store_name" class="form-control">
+                        </div>
+                        <div class="form-group has-feedback has-feedback-left">
                             <label class="control-label">{{ __('register.email') }} @error('email')
                                 <span class="error-feedback" style="color: red">( {!! $message !!} )</span>@enderror
                             </label>
@@ -67,7 +73,7 @@
                             </div>
                         </div>
                         <div class="forget-remember">
-                            <div class="checkbox">
+                            <div class="checkbox" @error('agree') style="color: red;" @enderror>
                                 <input type="checkbox" name="agree" id="agree">
                                 <label for="agree" style="user-select: none;">{{ __('register.agree') }} <a
                                         href="#">{{ __('register.terms') }}</a></label>

@@ -44,7 +44,8 @@
                             <div class="checkbox"><input type="checkbox" name="remember" id="remember"><label
                                     for="remember" style="user-select: none;">{{ __('login.remember_me') }}</label>
                             </div>
-                            <a href="#" class="forget-password"><span>{{ __('login.forget-password') }}</span></a>
+                            <a href="{{ url('forget-password') }}"
+                               class="forget-password"><span>{{ __('login.forget-password') }}</span></a>
                         </div>
                         <div class="login-buttons">
                             <input type="submit" name="login" value="{{ __('login.login') }}">

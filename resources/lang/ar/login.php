@@ -12,5 +12,6 @@ return [
     'forget-password' => 'هل نسيت كلمة المرور ؟',
     'remember_me' => 'تذكرني مرة اخري',
     'first-name' => 'الاسم الاول',
-    'last-name' => 'الاسم الاخير'
+    'last-name' => 'الاسم الاخير',
+    'reset' => 'اعادة تعيين'
 ];

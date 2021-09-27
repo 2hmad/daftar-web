@@ -26,10 +26,12 @@ class RegisterRequest extends FormRequest
         return [
             'first_name' => 'required',
             'last_name' => 'required',
+            'store_name' => 'required|unique:users',
             'email' => 'required|unique:users',
             'phone' => 'required',
-            'password' => 'required|min:6',
-            'confirm_password' => 'required|min:6|confirmed'
+            'password' => 'required|min:6|required_with:confirm_password|same:confirm_password',
+            'confirm_password' => 'min:6',
+            'agree' => 'required'
         ];
     }
 
@@ -38,6 +40,8 @@ class RegisterRequest extends FormRequest
         return [
             'first_name.required' => __('messages.first-name-required'),
             'last_name.required' => __('messages.last-name-required'),
+            'store_name.required' => __('messages.store_name-required'),
+            'store_name.unique' => __('messages.store_name-unique'),
             'email.required' => __('messages.email-required'),
             'email.unique' => __('messages.email-unique'),
             'phone.required' => __('messages.phone-required'),
