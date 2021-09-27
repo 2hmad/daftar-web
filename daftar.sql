@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 25, 2021 at 03:04 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Host: 127.0.0.1
+-- Generation Time: Sep 27, 2021 at 02:45 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,7 +67,32 @@ CREATE TABLE `customers_data` (
 --
 
 INSERT INTO `customers_data` (`id`, `customer_id`, `user_email`, `type`, `amount`, `name`, `date`, `details`, `pic`) VALUES
-(2, '4', 'eng.ahmedmohamed.2002@gmail.com', 'got', '50.00', 'fgh', '2021-09-24', 'fgh', 'public/uploads/eng.ahmedmohamed.2002@gmail.com-4-fgh-77074248.jpg');
+(2, '4', 'eng.ahmedmohamed.2002@gmail.com', 'gave', '50.00', 'fgh', '2021-09-24', 'fgh', 'public/uploads/eng.ahmedmohamed.2002@gmail.com-4-fgh-77074248.jpg'),
+(3, '4', 'eng.ahmedmohamed.2002@gmail.com', 'got', '500', 'fgh', '2021-09-24', 'fgh', 'public/uploads/eng.ahmedmohamed.2002@gmail.com-4-fgh-77074248.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `releated_users`
+--
+
+CREATE TABLE `releated_users` (
+  `id` int(255) NOT NULL,
+  `releated_user` text NOT NULL,
+  `first_name` text NOT NULL,
+  `last_name` text NOT NULL,
+  `email` varchar(5000) NOT NULL,
+  `phone` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `releated_users`
+--
+
+INSERT INTO `releated_users` (`id`, `releated_user`, `first_name`, `last_name`, `email`, `phone`, `password`) VALUES
+(1, 'eng.ahmedmohamed.2002@gmail.com', 'Ahmed', 'Mohamed', 'ahmed@gmail.com', '01275457924', ''),
+(2, 'eng.ahmedmohamed.2002@gmail.com', 'Ahmed', 'Mohamed', 'ahmed@gmail.com', '01275457924', '');
 
 -- --------------------------------------------------------
 
@@ -110,6 +135,14 @@ CREATE TABLE `suppliers_data` (
   `pic` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `suppliers_data`
+--
+
+INSERT INTO `suppliers_data` (`id`, `supplier_id`, `user_email`, `type`, `amount`, `name`, `date`, `details`, `pic`) VALUES
+(23, 1, 'eng.ahmedmohamed.2002@gmail.com', 'gave', '500', '', '', '', ''),
+(24, 1, 'eng.ahmedmohamed.2002@gmail.com', 'gave', '500', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -149,6 +182,12 @@ ALTER TABLE `customers_data`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `releated_users`
+--
+ALTER TABLE `releated_users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `suppliers`
 --
 ALTER TABLE `suppliers`
@@ -180,6 +219,12 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `customers_data`
 --
 ALTER TABLE `customers_data`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `releated_users`
+--
+ALTER TABLE `releated_users`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -192,7 +237,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `suppliers_data`
 --
 ALTER TABLE `suppliers_data`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
