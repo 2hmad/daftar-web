@@ -16,17 +16,20 @@ class ForgetPasswordController extends Controller
 
     public function message(Request $request)
     {
-        $rules = [
+        $rules = $request->validate([
             'email' => 'required'
-        ];
+        ],
+            [
+                'email.required' => __('messages.email-required')
+            ]);
+
         $user = DB::table('users')->where('email', '=', $request->input('email'))->first();
 
         if ($user === null) {
-            return redirect('forget-password')->with('error', __('message.email-not-found'));
+            return redirect('forget-password')->with('error', __('messages.email-not-found'));
         } else {
             $check = DB::table('reset_password')->where('email', '=', $request->input('email'))->first();
             if ($check !== null) {
-                $validator = Validator::make($request->all(), $rules);
                 $update = DB::table('reset_password')
                     ->where('email', '=', $request->input('email'))
                     ->limit(1)
@@ -39,7 +42,6 @@ class ForgetPasswordController extends Controller
                     );
                 return redirect('forget-password')->with('success', __('messages.link-send'));
             } else {
-                $validator = Validator::make($request->all(), $rules);
                 $insert = DB::insert('insert into reset_password (email, token, date, time) values (?, ?, ?, ?)', [
                     $request->input('email'),
                     Str::random(25),
