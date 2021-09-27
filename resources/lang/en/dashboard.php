@@ -32,5 +32,7 @@ return [
     'add-details' => 'Details ( Collection, quantity, invoice number )',
     'upload-image' => 'Upload image',
     'title' => 'Title',
-    'save-changes' => 'Save changes'
+    'save-changes' => 'Save changes',
+    'releated-users' => 'Added users',
+    'delete' => 'Delete'
 ];

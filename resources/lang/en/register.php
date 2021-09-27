@@ -8,6 +8,7 @@ return [
     'register' => 'Sign Up',
     'login-p' => 'Using automatic reminders via SMS or Whatsapp via the application, strengthen the bond of trust you have with your customers and speed up debt payment',
     'first-name' => 'First name',
+    'name' => 'Full name',
     'last-name' => 'Last name',
     'login' => 'Login',
     'phone' => 'Phone number',

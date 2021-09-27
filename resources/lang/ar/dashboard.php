@@ -30,5 +30,7 @@ return [
     'add-details' => 'تفاصيل ( البضاعة ، الكمية ، رقم الفاتورة )',
     'upload-image' => 'ارفع صورة',
     'title' => 'العنوان',
-    'save-changes' => 'حفظ التغييرات'
+    'save-changes' => 'حفظ التغييرات',
+    'releated-users' => 'المستخدمين المضافين',
+    'delete' => 'حذف'
 ];
