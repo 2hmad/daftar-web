@@ -144,6 +144,7 @@
                     <span>{{ $got->date }}</span>
                 </div>
             </div>
+            <div><img src="{{ asset($got->pic) }}" style="max-width: 80px;"></div>
             <div style="display: flex;flex-direction: column;align-items: center;">
                 <span
                     style="@if($got->type == "got") color:green; @else color:red; @endif font-weight: bold;font-size: 19px;">{{ $got -> amount }} {{ __('dashboard.egp') }}</span>

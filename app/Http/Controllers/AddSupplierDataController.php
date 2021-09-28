@@ -15,7 +15,7 @@ class AddSupplierDataController extends Controller
         $path = '';
         if ($file) {
             $filename = Session::get('email') . '-' . $request->input('supplier_id') . '-' . 'suppliers' . '-' . $request->input('name') . '-' . rand(0, 99999999) . '.' . $file->getClientOriginalExtension();
-            $path = $file->storeAs('public/uploads', $filename);
+            $path = $file->storeAs('uploads', $filename);
         }
 
         AddSupplierData::create([
