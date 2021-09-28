@@ -42,6 +42,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::post('/register', [RegisterUsers::class, 'store'])->name('register');
         Route::get('/forget-password', [ForgetPasswordController::class, 'index']);
         Route::post('/forget-password', [ForgetPasswordController::class, 'message'])->name('send-message-forget');
+        Route::get('/reset-password/{email}-{token}', [ForgetPasswordController::class, 'reset']);
+        Route::post('/reset-password/{email}-{token}', [ForgetPasswordController::class, 'ChangePassword'])->name('change-password');
+        Route::get('/token-expired', function () {
+            return view('token-expired');
+        });
+        Route::get('/password-changed', function () {
+            return view('password-changed');
+        });
     });
 
     Route::group(['middleware' => 'checkAuth'], function () {

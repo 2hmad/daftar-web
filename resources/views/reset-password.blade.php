@@ -13,30 +13,26 @@
                 <div style="direction: rtl;margin-top: 3%;padding: 10px">
                     @endif
                     <h1 style="text-align: center">{{ __('login.reset')}} <span>{{ __('login.password') }}</span></h1>
-                    <form method="post" action="{{ route('send-message-forget') }}">
+                    <form method="post" action="{{ route('change-password', ['email' => $email, 'token' => $token]) }}">
                         @csrf
                         <div style="width: 500px;max-width: 90%;margin-left: auto;margin-right: auto;">
-                            <input type="email" name="email" class="form-control" placeholder="{{ __('login.email') }}">
+                            <input type="password" name="password" class="form-control"
+                                   placeholder="{{ __('login.password') }}">
+                        </div>
+                        <div style="width: 500px;max-width: 90%;margin-left: auto;margin-right: auto;">
+                            <input type="password" name="confirm_password" class="form-control"
+                                   placeholder="{{ __('register.confirm-password') }}">
                         </div>
                         <div class="login-buttons" style="margin-top: 2%;margin-left: auto;margin-right: auto;">
-                            <input type="submit" name="login" value="{{ __('login.reset') }}">
+                            <input type="submit" name="reset" value="{{ __('dashboard.save-changes') }}">
                         </div>
                     </form>
                     @if($errors->any())
-                        <div class="alert alert-danger">
-                            @foreach($errors->all() as $error)
+                        @foreach($errors->all() as $error)
+                            <div class="alert alert-danger">
                                 {!! $error !!}
-                            @endforeach
-                        </div>
-                    @endif
-                    @if (Session::has('success'))
-                        <div class="alert alert-success">
-                            {!! Session::get('success') !!}
-                        </div>
-                    @elseif(Session::has('error'))
-                        <div class="alert alert-danger">
-                            {!! \Session::get('error') !!}
-                        </div>
+                            </div>
+                        @endforeach
                     @endif
                 </div>
         </div>

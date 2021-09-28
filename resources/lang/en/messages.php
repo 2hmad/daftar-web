@@ -19,4 +19,5 @@ return [
     'email-incorrect' => 'Email incorrect',
     'password-incorrect' => 'Password incorrect',
     'link-send' => 'A password reset link has been sent to your email',
+    'password-changed' => 'Password changed'
 ];
