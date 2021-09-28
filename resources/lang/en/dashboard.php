@@ -16,8 +16,8 @@ return [
     'my-information' => 'My Information',
     'business-card' => 'Business card',
     'add-users' => 'Add users',
+    'add-user' => 'Add user',
     'change-language' => 'Change language',
-    'logout' => 'Sign out',
     'add-customer' => 'Add customer',
     'customer-name' => 'Name',
     'customer-phone' => 'Phone',
@@ -34,5 +34,5 @@ return [
     'title' => 'Title',
     'save-changes' => 'Save changes',
     'releated-users' => 'Added users',
-    'delete' => 'Delete'
+    'delete' => 'Delete',
 ];

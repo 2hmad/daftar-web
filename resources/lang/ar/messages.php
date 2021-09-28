@@ -12,6 +12,7 @@ return [
     'email-unique' => 'البريد الالكتروني مسجل من قبل',
     'email-not-found' => 'البريد الالكتروني غير مسجل',
     'phone-required' => 'رقم الهاتف مطلوب',
+    'phone-unique' => 'رقم الهاتف موجود مسبقاً',
     'password-required' => 'كلمة المرور مطلوبة',
     'conf-pass-required' => 'حقل تأكيد كلمة المرور مطلوب',
     'password-match' => 'كلمة المرور غير متطابقة',

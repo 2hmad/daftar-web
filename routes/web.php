@@ -73,6 +73,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
             Route::post('/my-info', [MyInfoController::class, 'update'])->name('update.my-info');
             Route::get('/add-users', [AddUsersController::class, 'index']);
             Route::post('/add-users', [AddUsersController::class, 'store'])->name('add-users');
+            Route::get('/delete-releated-users/{id}', [AddUsersController::class, 'delete']);
         });
 
         Route::get('/logout', function () {

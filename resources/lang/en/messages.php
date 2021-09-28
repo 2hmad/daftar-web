@@ -11,6 +11,7 @@ return [
     'email-unique' => 'This email address already exists',
     'email-not-found' => 'This email address not registered',
     'phone-required' => 'Phone number required',
+    'phone-unique' => 'This phone number already exists',
     'password-required' => 'Password required',
     'conf-pass-required' => 'Confirm password required',
     'password-match' => 'Password does not match',

@@ -16,6 +16,7 @@ return [
     'my-information' => 'معلوماتي الشخصية',
     'business-card' => 'بطاقتي',
     'add-users' => 'اضافة مستخدمين',
+    'add-user' => 'اضافة مستخدم',
     'change-language' => 'تغيير اللغة',
     'logout' => 'تسجيل الخروج',
     'add-customer' => 'اضافة عميل',
